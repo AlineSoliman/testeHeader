@@ -1,0 +1,127 @@
+{
+  "header.full": {
+    "blocks": ["header-layout.desktop", "header-layout.mobile"]
+  },
+  "header-layout.desktop": {
+    "children": ["flex-layout.row#desktop"]
+  },
+
+  "flex-layout.row#desktop": {
+    "props": {
+      "blockClass": "flexLayoutCssRow",
+      "horizontalAlign": "center",
+      "verticalAlign": "center",
+      "preventHorizontalStretch": true,
+      "preventVerticalStretch": true,
+      "fullWidth": true
+    },
+    "children": [
+      "flex-layout.col#logo-desktop",
+      "flex-layout.row#menu",
+      "flex-layout.col#spacer"
+    ]
+  },
+  "flex-layout.col#spacer": {
+    "props": {
+      "width": "grow"
+    }
+  },
+  "flex-layout.col#logo-desktop": {
+    "props": {
+      "verticalAlign": "middle"
+    },
+    "children": ["logo"]
+  },
+  "logo": {
+    "props": {
+      "title": "Logo",
+      "href": "/",
+      "url": "https://acct.global/wp-content/uploads/2021/06/logo-acct-black.svg",
+      "width": "100"
+    }
+  },
+  "flex-layout.row#menu": {
+    "props": {
+      "blockClass": "rowMenu"
+    },
+    "children": ["header-force-center","vtex.menu@2.x:menu#websites"]
+  },
+  "vtex.menu@2.x:menu#websites": {
+    "props": {
+      "blockClass": "menu",
+      "items": [
+      {
+    "id": "menu-inicio",
+    "blockClass":"menuInicio",
+    "type": "custom",
+    "iconId": null,
+    "highlight": false,
+    "itemProps": {
+      "type": "internal",
+      "href": "/",
+      "noFollow": false,
+      "tagTitle": "inicio",
+      "text": "INÍCIO"
+    }
+  },
+  {
+    "id": "menu-acct",
+    "type": "custom",
+    "iconId": null,
+    "highlight": false,
+    "itemProps": {
+      "type": "internal",
+      "href": "/",
+      "noFollow": false,
+      "tagTitle": "acct",
+      "text": "ACCT"
+    }
+  },
+  {
+    "id": "menu-produtos",
+    "type": "custom",
+    "iconId": null,
+    "highlight": false,
+    "itemProps": {
+      "type": "internal",
+      "href": "/",
+      "noFollow": false,
+      "tagTitle": "produtos",
+      "text": "PRODUTOS"
+    }
+  },
+  {
+    "id": "menu-contato",
+    "type": "custom",
+    "iconId": null,
+    "highlight": false,
+    "itemProps": {
+      "type": "internal",
+      "href": "/",
+      "noFollow": false,
+      "tagTitle": "contato",
+      "text": "CONTATO"
+    }
+  }
+  ]
+  }
+},
+   
+  "flex-layout.row#mobile": {
+    "children": [
+      "drawer",
+      "logo",
+      "flex-layout.col#spacer"
+      
+    ],
+    "props": {
+      "blockClass": "main-header-mobile",
+      "preventHorizontalStretch": true,
+      "preserveLayoutOnMobile": true,
+      "fullWidth": true
+    }
+  },
+  "drawer": {
+    "children": ["vtex.menu@2.x:menu#websites"]
+  }
+}
